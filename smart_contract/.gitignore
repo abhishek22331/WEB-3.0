@@ -9,3 +9,7 @@ typechain-types
 cache
 artifacts
 
+#json
+secrets.json
+package.json
+package-lock.json

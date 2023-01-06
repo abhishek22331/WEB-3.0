@@ -1,26 +1,36 @@
 //SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
-contract Transactions{
-    uint256 TransactionsCount;
-    event Transfer(address _from ,address _receiver ,uint __amount,string _message,uint _timestamp, string _keyword);
-    struct TransferStruct{
-        address sender;
-        address receiver;
-        uint amount;
-        string message;
-        uint timestamp;
-        string keyword;
-    }
-    TransferStruct[] transactions;
+pragma solidity ^0.8.9;
 
-    function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword) public{
-        TransactionsCount+=1;
-        transactions.push(TransferStruct(msg.sender,receiver,amount,message,block.timestamp,keyword));
+contract Transactions {
+    uint256 TransactionsCount;
+    uint firstNo;
+    uint secondNo;
+    uint thirdNo;
+
+    // Defining the function
+    // to set the value of the
+    // first variable
+    function firstNoSet(uint x) public {
+        firstNo = x;
     }
-    function getAllTransactions() public view returns(TransferStruct[] memory){
-        //return Transaction
+
+    // Defining the function
+    // to set the value of the
+    // second variable
+    function secondNoSet(uint y) public {
+        secondNo = y;
     }
-    function getTransactionsCount() public view returns(uint256){
-        //return transactionCount
+
+    
+function thirdNoSet(uint x) public {
+        thirdNo = x;
+    }
+    // Defining the function
+    // to add the two variables
+    function add() public view returns (uint) {
+        uint Sum = firstNo + secondNo+thirdNo;
+
+        // Sum of two variables
+        return Sum;
     }
 }

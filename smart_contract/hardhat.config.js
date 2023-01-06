@@ -1,6 +1,15 @@
-require("@nomicfoundation/hardhat-toolbox");
+// require("@nomicfoundation/hardhat-toolbox");
 
-/** @type import('hardhat/config').HardhatUserConfig */
+const { mnemonic } = require('./secrets.json');
+require("@nomiclabs/hardhat-waffle");
+
 module.exports = {
-  solidity: "0.8.17",
+  solidity: "0.8.13",
+
+  networks: {
+    testnet: {
+      url: "https://data-seed-prebsc-1-s1.binance.org:8545",
+      accounts: { mnemonic: mnemonic }
+    }
+  }
 };
